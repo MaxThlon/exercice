@@ -1,0 +1,117 @@
+{
+  "name": "knowledge",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build-ci:dev": "ng build --configuration dev",
+    "build-ci:production": "ng build --configuration production --build-optimizer --aot --output-hashing=all",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "cypress open",
+    "e2e:ci": "concurrently --kill-others --success first \"ng serve\" \"wait-on http-get://localhost:4200/ && cypress run --browser firefox\""
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.2.3",
+    "@angular/cdk": "^10.2.3",
+    "@angular/common": "~10.2.3",
+    "@angular/compiler": "~10.2.3",
+    "@angular/core": "~10.2.3",
+    "@angular/forms": "~10.2.3",
+    "@angular/platform-browser": "~10.2.3",
+    "@angular/platform-browser-dynamic": "~10.2.3",
+    "@angular/router": "~10.2.3",
+    "@ngx-formly/bootstrap": "^5.10.6",
+    "@ngx-formly/core": "^5.10.6",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "core-js": "^2.6.11",
+    "index": "^0.4.0",
+    "keycloak-angular": "7.1.0",
+    "keycloak-js": "6.0.1",
+    "ng-zorro-antd": "^12.0.1",
+    "rxjs": "~6.5.4",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/architect": "~0.1001.4",
+    "@angular-devkit/build-angular": "~0.1002.0",
+    "@angular-devkit/build-ng-packagr": "^0.1002.0",
+    "@angular/cli": "~10.2.0",
+    "@angular/compiler-cli": "~10.2.3",
+    "@angular/language-service": "~10.2.3",
+    "@types/jasmine": "^3.6.1",
+    "@types/jest": "26.0.14",
+    "@types/node": "^12.11.1",
+    "@angular-eslint/builder": "^0.5.0-beta.5",
+    "@angular-eslint/eslint-plugin": "^0.5.0-beta.3",
+    "@angular-eslint/eslint-plugin-template": "^0.5.0-beta.3",
+    "@angular-eslint/schematics": "^0.5.0-beta.3",
+    "@angular-eslint/template-parser": "^0.5.0-beta.3",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "@angular-builders/jest": "10.0.1",
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "codelyzer": "^6.0.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.5",
+    "concurrently": "^5.3.0",
+    "cypress": "^4.12.1",
+    "cypress-cucumber-preprocessor": "^4.0.0",
+    "eslint": "^7.11.0",
+    "gulp": "^4.0.2",
+    "jest": "26.4.2",
+    "jest-canvas-mock": "^2.3.0",
+    "jest-preset-angular": "^8.3.1",
+    "jest-sonar-reporter": "^2.0.0",
+    "jest-stare": "^2.0.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/jestSetup.ts"
+    ],
+    "testResultsProcessor": "jest-sonar-reporter",
+    "watchPathIgnorePatterns": [
+      "/.vscode/",
+      ".*jest-stare.*\\.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/.vscode/",
+      "/node_modules/",
+      "/cypress/"
+    ],
+    "reporters": [
+      "default",
+      "jest-stare"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{ts}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": "jest-stare",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/src/typings.d.ts",
+      "src/environments"
+    ]
+  },
+  "jest-stare": {
+    "coverageLink": "./lcov-report/index.html"
+  }
+}

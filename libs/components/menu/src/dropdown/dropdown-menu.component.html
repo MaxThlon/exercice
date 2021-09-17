@@ -1,0 +1,7 @@
+<a nz-dropdown [nzTrigger]="'click'" [nzDropdownMenu]="menu" (nzVisibleChange)="showMenu($event)">
+	<ng-container [ngTemplateOutlet]="templateRefContent"></ng-container>
+	<i nz-icon nzType="down"></i>
+</a>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+	<mt-menu [menuItemList$]="menuItemList$"></mt-menu>
+</nz-dropdown-menu>

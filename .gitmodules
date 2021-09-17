@@ -1,0 +1,12 @@
+[submodule "libs/components/menu"]
+	path = libs/components/menu
+	url = git@macmax.gitlab:../Angular/Components/menu.git
+[submodule "libs/modules/auth"]
+	path = libs/modules/auth
+	url = git@macmax.gitlab:../Angular/Modules/auth.git
+[submodule "libs/modules/keycloak-auth"]
+	path = libs/modules/keycloak-auth
+	url = git@macmax.gitlab:../Angular/Modules/keycloak-auth.git
+[submodule "libs/modules/translate"]
+	path = libs/modules/translate
+	url = git@macmax.gitlab:../Angular/Modules/translate.git

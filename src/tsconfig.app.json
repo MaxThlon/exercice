@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app"
+  },
+  "exclude": [
+    "cypress",
+    "jestSetup.ts",
+    "jestGlobalMocks.ts",
+    "**/*-mock.service.ts",
+    "**/*.spec.ts"
+  ]
+}

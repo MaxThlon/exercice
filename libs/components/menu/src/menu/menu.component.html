@@ -1,0 +1,57 @@
+<ul nz-menu>
+	<ng-template #templateMenuItem let-item>
+		<span [ngSwitch]="item.menuItemType">
+			<!-- Case branch menu items -->
+			<span *ngSwitchCase="EEMenuItemType.Branch">
+				<li nz-submenu>
+					<span title>{{ item.translation | translate }}</span>
+					<ul>
+						<ng-container
+							[ngTemplateOutlet]="templateMenuItems"
+							[ngTemplateOutletContext]="{ $implicit: item.childrens }"
+						></ng-container>
+					</ul>
+				</li>
+			</span>
+
+			<!-- Case route menu items -->
+			<span *ngSwitchCase="EEMenuItemType.Route">
+				<li nz-menu-item [routerLink]="item.route">
+					<!-- skipLocationChange -->
+					<span title>{{ item.translation | translate }}</span>
+				</li>
+			</span>
+
+			<!-- Case method menu items -->
+			<span *ngSwitchCase="EEMenuItemType.Function">
+				<li nz-menu-item (click)="callFunction($event, item)">
+					<span title>{{ item.translation | translate }}</span>
+				</li>
+			</span>
+
+			<!-- Case method menu items -->
+			<span *ngSwitchCase="EEMenuItemType.Observable">
+				<li nz-menu-item (click)="callObservable($event, item)">
+					<span title>{{ item.translation | translate }}</span>
+				</li>
+			</span>
+		</span>
+	</ng-template>
+
+	<ng-template #templateMenuItemsAsync let-menuItems>
+		<span *ngFor="let item of menuItems | async">
+			<ng-container [ngTemplateOutlet]="templateMenuItem" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+		</span>
+	</ng-template>
+
+	<ng-template #templateMenuItems let-menuItems>
+		<span *ngFor="let item of menuItems">
+			<ng-container [ngTemplateOutlet]="templateMenuItem" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+		</span>
+	</ng-template>
+
+	<ng-container
+		[ngTemplateOutlet]="templateMenuItemsAsync"
+		[ngTemplateOutletContext]="{ $implicit: menuItemList$ }"
+	></ng-container>
+</ul>

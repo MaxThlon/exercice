@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "chromeWebSecurity": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "video": false,
+  "fixturesFolder": "",
+  "testFiles": "**/*.feature",
+  "env": {
+    "username": "max@maxthlon.com",
+    "password": "maxthlon"
+  }
+}

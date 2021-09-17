@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/home/max/work/perso/thlon/knowledge/frontend/libs/modules/keycloak-auth/src/services/auth/keycloak-auth.service.spec.ts">
+    <testCase name="KeycloakAuthService should be created" duration="45"/>
+  </file>
+  <file path="/home/max/work/perso/thlon/knowledge/frontend/src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="65"/>
+    <testCase name="AppComponent should have as title &apos;knowledge&apos;" duration="16"/>
+  </file>
+  <file path="/home/max/work/perso/thlon/knowledge/frontend/libs/modules/keycloak-auth/src/services/auth/keycloak-auth-guard.service.spec.ts">
+    <testCase name="KeycloakAuthGuardService should be created" duration="34"/>
+  </file>
+</testExecutions>
